@@ -1,78 +1,39 @@
-# PlayCore API sample
-
-This sample demonstrates usage of the PlayCore API.
-
-Read more at http://g.co/androidappbundle
-
-## Introduction
-
-The sample contains several modules.
-
-`app` -> Contains the base application which always will be installed on device.
-
-The `MainActivity` class demonstrates how to use the API to load and launch features.
-
-The `BaseSplitActivity` abstract class implements the required `SplitCompat.Install()` call
-in the `attachBaseContext` method. This allow to launch an activity from a freshly downloaded
-dynamic module without having the restart the application.
-
-`features/*` -> Contains features which can be downloaded on demand using the PlayCore API.
-`instant/*` -> Contains instant enabled features which can be downloaded using the PlayCore API or via Url.
-
-Each feature as some distinctly unique characteristics.
-
-`features/assets` -> Feature containing only assets.
-`features/kotlin` -> Feature written in Kotlin.
-`features/java` -> Feature written in Java.
-`features/native` -> Feature written in Kotlin using JNI.
-`instant/split` -> Instant Feature without an URL route. Loaded using Split
-Install API
-`instant/url` -> Instant Feature with a URL route
-
-The `AndroidManifest` files in each feature show
-how to declare a feature module as part of a dynamic app. Any module with the
-instant attribute is instant enabled. In this sample these can be found in the
-`instant/` folder:
-
-```
-  <dist:module
-    dist:instant="true"/>
-```
-
-## Screenshots
-
-<img src="screenshots/main.png" width="30%" />
 
 
-## Getting Started
+@@ -1,25 +1,25 @@
+# Copyright 2019 Google LLC	# Copyright 2019 Google LLC
+#	#
+# Licensed under the Apache License, Version 2.0 (the "License");	# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.	# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at	# You may obtain a copy of the License at
+#	#
+#     https://www.apache.org/licenses/LICENSE-2.0	#     https://www.apache.org/licenses/LICENSE-2.0
+#	#
+# Unless required by applicable law or agreed to in writing, software	# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,	# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.	# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and	# See the License for the specific language governing permissions and
+# limitations under the License.	# limitations under the License.
+#	#
+# GOOGLE SAMPLE PACKAGING DATA	# GOOGLE SAMPLE PACKAGING DATA
+#	#
+# This file is used by Google as part of our samples packaging process.	# This file is used by Google as part of our samples packaging process.
+# End users may safely ignore this file. It has no relevance to other systems.	# End users may safely ignore this file. It has no relevance to other systems.
+---	---
+status:       PUBLISHED	status:       PUBLISHED
+technologies: [Android]	technologies: [Android]
+categories:   [Dynamic Apps]	categories:   [App Bundle]
+languages:    [Kotlin, Java, Native]	languages:    [Kotlin, Java, Native]
+solutions:    [Mobile]	solutions:    [Mobile]
 
-Clone this repository, enter the top level directory and run <code>./gradlew tasks</code>
-to get an overview of all the tasks available for this project.
 
-## Testing dynamic delivery
-
-To test dynamic delivery with this sample, you'll need to upload it to the Google Play Store's
-internal testing channel.
-
-Before uploading, make sure to change the `applicationId` in `app/build.gradle`.
-
-## Running instrumentation tests
-
-In order to run instrumentation tests, parallel builds have to be turned off at the moment.
-This means you can run them via `./gradlew connectedAndroidTest --no-parallel`.
-
-Tooling support for this is being worked on – currently it's not possible to run
-instrumentation tests for dynamic-feature modules from Android Studio directly.
-Use the command line instead.
-
-## Support
-
-- Stack Overflow: http://stackoverflow.com/questions/tagged/android
-
-If you've found an error *in this sample*, please file an issue:
-
-https://github.com/android/app-bundle/issues
-
-Patches are encouraged, and may be submitted by forking this project and
-submitting a pull request through GitHub.
-
+ github:       android/app-bundle	github:       android/app-bundle
+level:        INTERMEDIATE	level:        INTERMEDIATE
+apiRefs:	apiRefs:
+    - google:com.google.android.play.core.splitinstall.SplitInstallManager	    - google:com.google.android.play.core.splitinstall.SplitInstallManager
+    - google:com.google.android.play.core.splitinstall.SplitInstallManagerFactory	    - google:com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+    - google:com.google.android.play.core.splitinstall.SplitInstallRequest	    - google:com.google.android.play.core.splitinstall.SplitInstallRequest
+    - google:com.google.android.play.core.splitinstall.SplitInstallSessionState	    - google:com.google.android.play.core.splitinstall.SplitInstallSessionState
+    - google:com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener	    - google:com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
+    - google:com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus	    - google:com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+license: apache2
